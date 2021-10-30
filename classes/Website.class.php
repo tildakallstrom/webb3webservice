@@ -20,21 +20,21 @@ class Website {
         }
     } 
 
-    //plocka fram alla kurser
+    //plocka fram alla webbplatser
     public function getWebsites(): array {
         $sql = "SELECT * FROM websites ORDER BY id;";
         $result = $this->db->query($sql);
         //return associative array
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-//plocka ut en kurs
+//plocka ut en webbplats
     public function getWebsiteById(int $id) : array {
         $id = intval($id);
         $sql = "SELECT * FROM websites WHERE id = $id;";
         $result = $this->db->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-//lägga till en kurs
+//lägga till en webbplats
     public function createWebsite(string $title, string $description, string $url, string $image) :bool {
         if (!$this->setTitle($title)) {
             return false;
@@ -63,7 +63,7 @@ class Website {
             
         }
 
-//radera kurs
+//radera webbplats
     public function deleteWebsite(int $id) : bool {
         $id = intval($id);
             $sql = "DELETE FROM websites WHERE id=$id;";
@@ -72,7 +72,7 @@ class Website {
             return $result;
     }
 
-//uppdatera kurs
+//uppdatera webbplats
 public function updateWebsite($id, $data) : bool {
     $id = intval($id);
  
