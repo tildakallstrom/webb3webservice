@@ -2,10 +2,10 @@
 
 class Database {
     //inställningar för db
-    private $host = "studentmysql.miun.se";
-    private $db_name = "tika1900";
-    private $password = "y8rwy9QKTW";
-    private $username = "tika1900";
+    private $host = "x";
+    private $db_name = "x";
+    private $password = "x";
+    private $username = "x";
     private $db;
  
 
