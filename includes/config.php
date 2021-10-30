@@ -16,17 +16,10 @@ spl_autoload_register(function ($class_name) {
 
 if($devMode) {
       
-   // Db settings (remote - studenter.miun.se)
-   define("DBHOST", "studentmysql.miun.se");
-   define("DBUSER", "tika1900");
-   define("DBPASS", "y8rwy9QKTW");
-   define("DBDATABASE", "tika1900");
+   // Db settings x
+   define("DBHOST", "x");
+   define("DBUSER", "x");
+   define("DBPASS", "x");
+   define("DBDATABASE", "x");
       
-} /*else {
-          //db-inställningar
-    define("DBHOST", "localhost");
-    define("DBUSER", "course");
-    define("DBPASS", "course");
-    define("DBDATABASE", "course");
-}
-*/
+} 
