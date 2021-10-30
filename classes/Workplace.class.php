@@ -23,21 +23,21 @@ class Workplace {
         }
     } 
 
-    //plocka fram alla kurser
+    //plocka fram alla arbeten
     public function getWorkplaces(): array {
         $sql = "SELECT * FROM workplaces;";
         $result = $this->db->query($sql);
         //return associative array
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-//plocka ut en kurs
+//plocka ut ett arbete
     public function getWorkplaceById(int $id) : array {
         $id = intval($id);
         $sql = "SELECT * FROM workplaces WHERE id = $id;";
         $result = $this->db->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-//lägga till en kurs
+//lägga till ett arbete
     public function createWork(string $workplace, string $title, string $city, string $country, string $description, string $start, string $stop) :bool {
         if (!$this->setWorkplace($workplace)) {
             return false;
@@ -71,7 +71,7 @@ class Workplace {
             
         }
 
-//radera kurs
+//radera arbete
     public function deleteWork(int $id) : bool {
         $id = intval($id);
             $sql = "DELETE FROM workplaces WHERE id=$id;";
@@ -80,7 +80,7 @@ class Workplace {
             return $result;
     }
 
-//uppdatera kurs
+//uppdatera arbete
 public function updateWork($id, $data) : bool {
     $id = intval($id);
 
