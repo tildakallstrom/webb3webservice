@@ -1,13 +1,11 @@
 <?php
 include("includes/config.php");
 
-//anslut 
 $db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
-if($db->connect_errno > 0){
+if ($db->connect_errno > 0) {
     die('Fel vid anslutning [' . $db->connect_error . ']');
 }
 
-//sql för att skapa tabell
 $sql = "DROP TABLE IF EXISTS works;
 CREATE TABLE `works` (
     `id` int(2) NOT NULL,
@@ -20,13 +18,11 @@ CREATE TABLE `works` (
     `stop` date NOT NULL,
     `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );";
-  
-  //skriv ut sql-fråga
-  echo "<pre>$sql</pre>";
 
-  //skicka sql-fråga till db
-  if($db->multi_query($sql)) {
-      echo "<p>Tabeller installerades.</p>";
-  } else {
-      echo "<p class='error'>Fel vid installation av tabeller.</p>";
-  }
+echo "<pre>$sql</pre>";
+
+if ($db->multi_query($sql)) {
+    echo "<p>Tabeller installerades.</p>";
+} else {
+    echo "<p class='error'>Fel vid installation av tabeller.</p>";
+}

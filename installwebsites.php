@@ -1,8 +1,7 @@
 <?php
 include("includes/config.php");
-//anslut till db
 $db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
-if($db->connect_errno > 0){
+if ($db->connect_errno > 0) {
     die('Fel vid anslutning [' . $db->connect_error . ']');
 }
 
@@ -16,10 +15,10 @@ CREATE TABLE websites(
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     );";
 
-    echo "<pre>$sql</pre>";
+echo "<pre>$sql</pre>";
 
-    if($db->multi_query($sql)) {
-        echo "DB installerad.";
-    } else {
-        echo "Fel vid installation av DB.";
-    }
+if ($db->multi_query($sql)) {
+    echo "DB installerad.";
+} else {
+    echo "Fel vid installation av DB.";
+}
